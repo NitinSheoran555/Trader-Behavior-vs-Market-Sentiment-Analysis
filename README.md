@@ -1,87 +1,74 @@
-# Crypto Fear & Greed Index — Analysis
-
-# Intern Project** | Period covered: Feb 2018 – Sep 2024 | 2,644 daily observations
+📊 Fear vs Greed: How Market Emotions Impact Trading Behavior
 
 
-## Project Structure
+This project started with a simple curiosity:
+Do traders actually behave differently when the market is fearful vs greedy?
 
+Instead of just looking at prices, I wanted to dig into the human side of trading — how emotions influence decisions, risk-taking, and outcomes.
 
- fear_greed_analysis.ipynb   # Main analysis notebook 
- fear_greed_index.csv        # Source dataset
- README.md                   # This file
- charts/
- chart1_timeline.png     # Daily scatter  - full timeline
- chart2_distribution.png # Sentiment class distribution 
- chart3_monthly_avg.png  # Monthly rolling average (fear/greed shading)
- chart4_yearly.png       # Yearly sentiment breakdown (stacked bar) 
- chart5_transitions.png  # Sentiment transition probability heatmap
- chart6_histogram.png    # Value distribution per sentiment class
+🚀 Why I Built This
 
----
+While learning data analytics, I realized most projects focus only on numbers.
+But in real markets, psychology plays a huge role.
 
-## Requirements 
+So I decided to explore:
 
-| Package     | Version  |
+How sentiment affects trading performance
+Whether traders become riskier during Greed
+And if Fear leads to more cautious behavior
+🧠 What This Project Covers
+Merging market sentiment (Fear & Greed Index) with trading data
+Segmenting data into Fear vs Greed days
+Analyzing:
+PnL (Profit & Loss)
+Win Rate
+Trading Activity
+Identifying behavior patterns across market conditions
+🛠️ Tech Stack
+Python
+Pandas (data manipulation)
+Matplotlib & Seaborn (visualization)
 
-| Python      |  3.9    |
-| pandas      | any recent |
-| matplotlib  | any recent |
-| seaborn     | any recent |
+Simple tools, but used with a focus on insights over complexity.
 
-Install dependencies:
+📊 Key Insights
 
-bash
-pip install pandas matplotlib seaborn
+After exploring the data, a few things stood out:
 
+📈 Greed → More aggressive trading
+Traders tend to take bigger risks and trade more frequently
+📉 Fear → Higher uncertainty
+Performance becomes inconsistent, and volatility impacts results
+⚖️ Behavior shifts with sentiment
+Decision-making is clearly influenced by market mood
+💡 Practical Takeaways
 
+If I had to turn this into real-world rules:
 
+During Fear markets
+Reduce position size
+Focus on high-confidence trades
+Avoid overtrading
+During Greed markets
+Don’t get carried away by momentum
+Book profits early
+Manage risk strictly
+📂 Project Structure
+├── fear_greed_index.csv
+├── historical_data.csv
+├── projectintern.ipynb
+├── requirement.txt
+└── README.md
+⚙️ How to Run This Project
+pip install -r requirement.txt
 
-## How to Run
+Then open:
 
-### Option A — Jupyter Notebook (recommended)
+projectintern.ipynb
+📌 What I Learned
 
-```bash
-# Clone / download project files, then:
-jupyter notebook fear_greed_analysis.ipynb
-```
+This project helped me understand that:
 
-Run all cells top-to-bottom (`Kernel → Restart & Run All`).  
-Make sure `fear_greed_index.csv` is in the **same directory** as the notebook.
-
-### Option B — JupyterLab
-
-```bash
-jupyter lab fear_greed_analysis.ipynb
-```
-
-### Option C — Convert to script and run headlessly
-
-```bash
-jupyter nbconvert --to script fear_greed_analysis.ipynb
-python fear_greed_analysis.py
-```
-
-> **Note:** When running as a script, `plt.show()` calls will produce no window. Add `plt.savefig(...)` before each `plt.show()` call to save charts to disk instead.
-
----
-
-## Dataset Description
-
-| Column         | Type   | Description                                      |
-|----------------|--------|--------------------------------------------------|
-| `timestamp`    | int64  | Unix timestamp (seconds)                         |
-| `value`        | int64  | Fear & Greed index value (0 = max fear, 100 = max greed) |
-| `classification` | str  | Categorical label (Extreme Fear / Fear / Neutral / Greed / Extreme Greed) |
-| `date`         | str    | Human-readable date (M/D/YY format)              |
-
----
-
-## Analysis Summary
-
-See **Section 5** of the notebook for full insights and strategy recommendations.  
-High-level findings:
-
-- The market spent ~49% of days in Fear/Extreme Fear vs ~36% in Greed/Extreme Greed.
-- Extreme sentiment regimes are persistent: average streak of ~5–6 days, max 74–77 days.
-- Median recovery time from Fear to Greed: **15 days** (mean: 38.6 days, highly right-skewed).
-- Sentiment autocorrelation is strong: today's sentiment predicts tomorrow's with 60–75% accuracy.
+Data analysis isn’t just about tools — it’s about asking the right questions
+Even simple datasets can reveal powerful insights
+Storytelling is just as important as technical skills
